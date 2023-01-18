@@ -1,11 +1,13 @@
 /** @type {import('./$types').Actions} */
 export const actions = {
   foo: async (event) => {
-    console.log("foo:")
-    //console.log(event)
+    const data = await event.request.formData()
+    console.log(data.get('fname'))
+
   },
   bar: async (event) => {
-    console.log("bar:")
+    const data = await event.request.formData()
+    console.log(data)
     //console.log(event)
   }
 };
